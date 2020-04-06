@@ -38,6 +38,11 @@ header a {
     text-decoration: none;
 }
 
+p{
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .portrait {
     width: 250px;
 }
