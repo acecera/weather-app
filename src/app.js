@@ -32,7 +32,7 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/help', (req, res) => {
-    res.render('404', {
+    res.render('help', {
         helpText: 'This is some helpful text.',
         title: 'Help',
         name: 'Ace'
@@ -40,9 +40,16 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    if(!req.query.address) {
+        return res.send({
+            error: 'You must provide an address'
+        })
+    }
+
     res.send({
-        forecast: 'It is sunny',
-        location: 'Los Angeles'
+        forecast: 'It is raining',
+        location: 'Los Angeles',
+        address: req.query.address
     })
 })
 
